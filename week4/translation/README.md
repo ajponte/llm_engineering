@@ -11,4 +11,6 @@ Unit tests for deterministic logic.
 
 **Run all unit tests**
 
-`ptytest translate/tests/`
+- `ptytest tests/`
+
+- or with poetry `poetry run pytest tests/`

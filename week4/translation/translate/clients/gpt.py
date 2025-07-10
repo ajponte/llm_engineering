@@ -3,8 +3,8 @@ import openai
 from enum import StrEnum
 
 
-from week4.translate.clients import DEFAULT_OPENAI_MODEL
-from week4.translate.error import ApiClientException
+from translate.clients import DEFAULT_OPENAI_MODEL
+from translate.error import ApiClientException
 
 
 class LanguageModel(StrEnum):

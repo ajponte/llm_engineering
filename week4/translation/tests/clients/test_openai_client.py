@@ -1,7 +1,7 @@
 import pytest
 
-from week4.translate.clients import DEFAULT_OPENAI_MODEL
-from week4.translate.clients.gpt import OpenAiApiClient, RoleName
+from translate.clients import DEFAULT_OPENAI_MODEL
+from translate.clients.gpt import OpenAiApiClient, RoleName
 
 
 # Pytest fixture to set up the OpenAiApiClient instance with mocks
