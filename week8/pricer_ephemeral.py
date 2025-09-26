@@ -12,10 +12,10 @@ secrets = [modal.Secret.from_name("hf-secret")]
 GPU = "T4"
 BASE_MODEL = "meta-llama/Meta-Llama-3.1-8B"
 PROJECT_NAME = "pricer"
-HF_USER = "ed-donner" # your HF name here! Or use mine if you just want to reproduce my results.
-RUN_NAME = "2024-09-13_13.04.39"
+HF_USER = "ajponte" # your HF name here! Or use mine if you just want to reproduce my results.
+RUN_NAME = "2025-09-23_00.50.09"
 PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
-REVISION = "e8d637df551603dc86cd7a1598a8f44af4d7ae36"
+# REVISION = "c6ed24ea729ea1c41d39db13d91b0c696e01c015"
 FINETUNED_MODEL = f"{HF_USER}/{PROJECT_RUN_NAME}"
 
 
@@ -52,7 +52,7 @@ def price(description: str) -> float:
         device_map="auto"
     )
 
-    fine_tuned_model = PeftModel.from_pretrained(base_model, FINETUNED_MODEL, revision=REVISION)
+    fine_tuned_model = PeftModel.from_pretrained(base_model, FINETUNED_MODEL)
 
     set_seed(42)
     inputs = tokenizer.encode(prompt, return_tensors="pt").to("cuda")
